@@ -1,19 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-/*
-//criar usuarios
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-//logar na conta
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-//sair da conta
-import { getAuth, signOut } from "firebase/auth";
-//verificar status se logado ou não
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-*/
+
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-document.addEventListener("DOMContentLoaded", function() {
-  let botaoCadastrar = document.getElementById("login");
-  botaoCadastrar.addEventListener("click", createUser);
+document.addEventListener("DOMContentLoaded", 
+function() {
+  let botaoCadastrar = document.getElementById("login"); 
+  botaoCadastrar.addEventListener("click", usuarioNaoLogado);
 });
+
 const firebaseConfig = {
     apiKey: "AIzaSyCLNDNZS2nf1NqmJMeexhNOjGa3kHbcBeM",
     authDomain: "autenticar-ebe6b.firebaseapp.com",
@@ -36,12 +29,10 @@ const firebaseConfig = {
   const auth = getAuth();
   let user = auth.currentUser
 
-  function createUser(){
+  function crirUsuarioComSenha(){
     
     let email = document.getElementById("email").value
     let senha = document.getElementById("senha").value
-
-  
 
   createUserWithEmailAndPassword(auth, email, senha)
     .then((user) => {
@@ -58,14 +49,19 @@ const firebaseConfig = {
     });
 }
 
-  function onStateUser(){
-
+  function usuarioLogado(){
+    let email = document.getElementById("email").value
+    //let senha = document.getElementById("senha").value
+   // let user = email
+    
     onAuthStateChanged(auth, (user) => {
+      user = email
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
-        console.log(user)
+        alert(`${user} logado com sucesso`)
+        alert(uid)
         // ...
       } else {
         // User is signed out
@@ -75,16 +71,17 @@ const firebaseConfig = {
     });
   }
 
-  function signInUser(){
+  function conectarComEmailSenha(){
 
     let email = document.getElementById("email").value
     let senha = document.getElementById("senha").value
 
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+    signInWithEmailAndPassword(auth, email, senha)
+    .then((email) => {
       // Signed in 
-      const user = userCredential.user;
+      const user = email.user;
       // ...
+      alert(`${email} logado com sucesso`)
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -92,7 +89,7 @@ const firebaseConfig = {
     });
   }
 
-  function signOutUser(){
+  function usuarioNaoLogado(){
 
     signOut(auth).then(() => {
       // Sign-out successful.
@@ -109,6 +106,6 @@ const firebaseConfig = {
   
 //botaoCadastrar.addEventListener("click",signInUser)
 console.log(user)
-botaoCadastrar.addEventListener("click",createUser)
+//botaoCadastrar.addEventListener("click",createUser)
 
  
