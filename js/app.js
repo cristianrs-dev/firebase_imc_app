@@ -3,8 +3,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/fireba
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 document.addEventListener("DOMContentLoaded", 
 function() {
-  let botaoCadastrar = document.getElementById("login"); 
-  botaoCadastrar.addEventListener("click", usuarioNaoLogado);
+  let botaoCadastrar = document.getElementById("bnt-login"); 
+  botaoCadastrar.addEventListener("click", conectarComEmailSenha);
 });
 
 const firebaseConfig = {
