@@ -5,9 +5,15 @@ const { JSDOM } = require('jsdom');
 const dom = new JSDOM(`<!DOCTYPE html><html><body></body></html>`);
 const document = dom.window.document
 
+
 function campoVazio(id){
-  const campo = document.getElementById(id).value.trim()
-  return campo === ''
+  const campo = document.getElementById(id)
+  if(campo === null){
+    return true
+  }
+  const input = campo.value.trim()
+  return input === ''
+  
 }
 
 
