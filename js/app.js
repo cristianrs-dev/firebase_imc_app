@@ -51,8 +51,7 @@ const firebaseConfig = {
 
   function usuarioLogado(){
     let email = document.getElementById("email").value
-    //let senha = document.getElementById("senha").value
-   // let user = email
+
     
     onAuthStateChanged(auth, (user) => {
       user = email
@@ -79,9 +78,9 @@ const firebaseConfig = {
     signInWithEmailAndPassword(auth, email, senha)
     .then((email) => {
       // Signed in 
-      const user = email.user;
+      const user = email.email;
       // ...
-      alert(`${email} logado com sucesso`)
+      alert(`${user} logado com sucesso`)
     })
     .catch((error) => {
       const errorCode = error.code;

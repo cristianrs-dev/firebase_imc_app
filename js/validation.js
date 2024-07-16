@@ -1,28 +1,31 @@
-function campoEmailVazio(){
-  const email = document.getElementById("email").value 
-  const userName = email.trim()
-  let vazio = false
-  if(userName === ''){
-    vazio = true
-  }
-  return vazio
+function campoVazio(id){
+  const campo = document.getElementById(id).value.trim()
+  return campo === ''
 }
 
-function campoSenhaVazio(){
-  const senha = document.getElementById("senha").value 
-  const password = senha.trim()
-  let vazio = false
-  if(password === ''){
-    vazio = true
+function verificaCamposVazios(event){
+  const email = document.getElementById("email").value.trim()
+  let hasError = false
+  if(campoVazio('email')){
+    alert("campo email vazio")
+     hasError = true
+  }else if(campoVazio('senha')){
+    alert("campo senha vazio")
+     hasError = true
+  }else if(!validarEmail(email)){
+    alert("e-mail invalido")
   }
-  return vazio
+
+  if(hasError){
+    event.preventDefault()
+  }
 }
 
-function verificaCamposVazios(){
-    if(campoEmailVazio() === true){
-      alert("campo email vazio")
-    }else if(campoSenhaVazio() === true){
-      alert("campo senha vazio")
-    }
+function validarEmail(email){
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  return regex.test(email)
 }
+
+
+
 document.getElementById("bnt-login").addEventListener('click',verificaCamposVazios)
