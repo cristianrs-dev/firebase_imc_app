@@ -1,11 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-document.addEventListener("DOMContentLoaded", 
-function() {
-  let botaoCadastrar = document.getElementById("bnt-login"); 
-  botaoCadastrar.addEventListener("click", conectarComEmailSenha);
-});
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCLNDNZS2nf1NqmJMeexhNOjGa3kHbcBeM",
@@ -24,11 +20,12 @@ const firebaseConfig = {
   */
   
   const app = initializeApp(firebaseConfig);
-  let botaoCadastrar = document.getElementById("login")
+  const auth = getAuth(app);
+  //let user = auth.currentUser
 
-  const auth = getAuth();
-  let user = auth.currentUser
+  export{app,auth,createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged}
 
+/*
   function crirUsuarioComSenha(){
     
     let email = document.getElementById("email").value
@@ -70,6 +67,7 @@ const firebaseConfig = {
     });
   }
 
+  
   function conectarComEmailSenha(){
 
     let email = document.getElementById("email").value
@@ -88,7 +86,7 @@ const firebaseConfig = {
     });
   }
 
-  function usuarioNaoLogado(){
+  function usuarioDesLogado(){
 
     signOut(auth).then(() => {
       // Sign-out successful.
@@ -98,13 +96,12 @@ const firebaseConfig = {
       console.log("erro ao desconectar")
     });
 
-  }
+  }*/
   
  
 
   
 //botaoCadastrar.addEventListener("click",signInUser)
-console.log(user)
 //botaoCadastrar.addEventListener("click",createUser)
 
  
