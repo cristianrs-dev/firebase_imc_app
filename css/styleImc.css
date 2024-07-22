@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+
+
+.tela{
+    max-width: 350px;
+    min-width: 250px;
+    margin: auto;
+    margin-top: 50px;
+    box-sizing: border-box;
+    background-color:#192a56;
+    height: auto;
+    border-radius: 15px;
+    padding: 10px;
+}
+.titulo{
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.form{
+    margin: auto;
+    margin-top: 15px;
+    padding-bottom: 30px;
+    border: none;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}
+.form input{
+    color: #718093;
+    padding: 5px;
+    border-radius: 2px;
+    border: none;
+    margin: 10px;
+}
+#botao{
+    padding-top: 30px;
+    color: white;
+    background-color: #2bd11d;
+    border-color:#2bd11d;
+    padding: 5px;
+    margin:auto;
+    margin-top: 15px;
+    width: 100px;
+    border-radius:5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#display{
+    color: black;
+    background-color:white;
+    width: 100px;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    font-size: larger;
+}
+#emoji{
+    margin: auto;
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    background-color: wheat;
+    border-radius: 50px;
+}
+#indicador{
+    color: black;
+    background-color:white;
+    width: 190px;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}

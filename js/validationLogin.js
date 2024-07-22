@@ -16,12 +16,6 @@ function campoVazio(id){
   
 }
 
-
-function campoEmailVazio(){
-  const email = document.getElementById("email").value.trim()
-  return email === ''
-}
-
 function verificaCamposVazios(event){
   const email = document.getElementById("email").value.trim()
   let hasError = false
