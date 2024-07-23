@@ -17,7 +17,8 @@ function conectarComEmailSenha(){
       // Signed in 
       const user = userCredential.user
       // ...
-      alert(`${user.email} logado com sucesso`)
+      window.location.href='../imc.html'
+     // alert(`${user.email} logado com sucesso`)
     })
     .catch((error) => {
       const errorCode = error.code;
