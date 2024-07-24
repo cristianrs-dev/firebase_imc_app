@@ -1,29 +1,25 @@
 
 function calcular(){
     //declaração de variaveis
-    var display   =  document.getElementById("display")
-    var indicador =  document.getElementById("indicador")
-    var h         =  document.getElementById("altura")
-    var p         =  document.getElementById("peso")
-
+    const resultado   =  document.getElementById("resultado")
+    const indicador =  document.getElementById("indicador")
+    const altura  =  parseFloat(document.getElementById("altura").value)
+    const peso    =  parseFloat(document.getElementById("peso").value)
+    console.log(altura)
    //validarCampo(h,p)
-   if(h.value === ''){
+   if(altura.value === ''){
 
         alert("campo altura vazio")
 
-    }else if(p.value === ''){
+    }else if(peso.value === ''){
 
         alert("campo peso vazio")
 
-    }else if(h.value === '' || p.value === '' ){
+    }else if(altura.value === '' || peso.value === '' ){
 
         alert("campos vazios")
 
     }else{
-
-        //conventendo texto para numero
-        var altura    =  parseFloat(h.value)
-        var peso      =  parseFloat(p.value)
 
         //calculo imc
         var imc=peso/(altura*altura)
@@ -61,25 +57,25 @@ function calcular(){
         }else if(obesidade1){
 
             
-            indicador.innerHTML="Seu imc indica obesidade 1"
+            indicador.innerHTML="Seu imc indica obesidade I"
 
         }else if(obesidade2){
 
             
-            indicador.innerHTML="Seu imc indica obesidade 2"
+            indicador.innerHTML="Seu imc indica obesidade II"
 
         }else if(obesidade3){
 
            
-            indicador.innerHTML="Seu imc indica obesidade 3"
+            indicador.innerHTML="Seu imc indica obesidade III"
 
         }else{
 
-            console.log("nenhuma metrica")
+            indicador.innerHTML="nenhuma classificação encontrada"
 
         }
     
-        display.innerHTML=`imc = ${imc.toFixed(2)}`   
+        resultado.innerHTML=`imc = ${imc.toFixed(2)}`   
     }  
     
 }
