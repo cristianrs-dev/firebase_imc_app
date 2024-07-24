@@ -1,11 +1,59 @@
 
-import {auth,signInWithEmailAndPassword,signOut,createUserWithEmailAndPassword, onAuthStateChanged} from './firebaseConfig.js'
+import {auth,signInWithEmailAndPassword,signOut,createUserWithEmailAndPassword, onAuthStateChanged} from '../app.js'
+
+const { JSDOM } = require('jsdom');
+const dom = new JSDOM(`<!DOCTYPE html><html><body></body></html>`);
+const document = dom.window.document
+
 
 document.addEventListener("DOMContentLoaded", 
 function() {
   let btnLogin = document.getElementById("btn-login"); 
   btnLogin.addEventListener("click", conectarComEmailSenha);
 });
+
+
+
+// Criando um contexto jsdom
+
+
+
+function campoVazio(id){
+  const campo = document.getElementById(id)
+  if(campo === null){
+    return true
+  }
+  const input = campo.value.trim()
+  return input === ''
+  
+}
+
+function verificaCamposVazios(event){
+  const email = document.getElementById("email").value.trim()
+  let hasError = false
+  if(campoVazio('email')){
+    alert("campo email vazio")
+     hasError = true
+  }else if(campoVazio('senha')){
+    alert("campo senha vazio")
+     hasError = true
+  }else if(!validarEmail(email)){
+    alert("e-mail invalido")
+  }
+
+  if(hasError){
+    event.preventDefault()
+  }
+}
+
+function validarEmail(email){
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  return regex.test(email)
+}
+
+module.exports={validarEmail,campoVazio}
+
+
 
 function conectarComEmailSenha(){
 
@@ -78,3 +126,5 @@ function usuarioLogado(){
       }
     });
   }
+
+  

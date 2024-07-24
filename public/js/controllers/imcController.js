@@ -79,3 +79,19 @@ function calcular(){
     }  
     
 }
+
+function formatarMaskPeso() {
+    let inputPeso = document.getElementById('peso');
+    let valor = inputPeso.value.replace(/\D/g, ''); 
+    inputPeso.value = valor.replace(/(\d{1,})(\d{2})$/, '$1.$2'); 
+}
+
+
+function formatarMaskAltura() {
+    let inputAltura = document.getElementById('altura');
+    let valor = inputAltura.value.replace(/\D/g, ''); 
+    inputAltura.value = valor.replace(/(\d{1,})(\d{2})$/, '$1.$2'); 
+}
+
+document.getElementById('peso').addEventListener('input', formatarMaskPeso);
+document.getElementById('altura').addEventListener('input', formatarMaskAltura);

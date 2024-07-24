@@ -12,18 +12,18 @@
 
     <form id="sombra" class="container card d-flex justify-content-center mt-5 p-3 col-lg-4 col-md-4 col-sm-4">
 
-        <div class="titulo">
-            <h3>Calculadora IMC</h3>
+        <div >
+            <h3 class="titulo" >imc<br> (índice de massa corporal)</h3>
         </div>
 
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label titulo">altura</label>
-          <input id="altura" type="text" placeholder="0.00 " class="form-control">
+          <label for="exampleInputEmail1" class="form-label">altura (metros)</label>
+          <input id="altura" type="text" placeholder="0.00 " class="form-control" required>
         </div>
 
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label titulo">peso</label>
-          <input id="peso" type="text" placeholder="0.00" class="form-control">
+          <label for="exampleInputPassword1" class="form-label">peso (kg)</label>
+          <input id="peso" type="text" placeholder="0.00" class="form-control" required >
         </div>
         
         <button type="button" class="btn btn-primary" onclick="calcular()" id="botao" >Calcular</button>
@@ -32,6 +32,6 @@
       <div id="resultado"></div>
      <div id="indicador"></div>
 
-    <script src="js/calculo-imc.js"></script>
+    <script src="js/controllers/imcController.js"></script>
 </body>
 </html>
