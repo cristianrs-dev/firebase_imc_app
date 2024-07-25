@@ -10,14 +10,10 @@ function() {
 
   if(btnLogin){
     btnLogin.addEventListener("click", conectarComEmailSenha);
-  }else{
-    alert("botao nao encontrado")
   }
   
   if(btnsignOut){
     btnsignOut.addEventListener("click",userDeslogado)
-  }else{
-    alert("botao nao encontrado")
   }
   
 });
@@ -72,7 +68,7 @@ function conectarComEmailSenha(){
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user
-      usuarioLogado() = userCredential.user
+     
       // ...
       window.location.href='/public/imc.html'
      // alert(`${user.email} logado com sucesso`)
