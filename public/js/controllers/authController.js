@@ -130,7 +130,7 @@ function usuarioLogado(){
       // Sign-out successful.
       if(!usuarioLogado()){
         console("usuario desconectado")
-        window.location.href='/public/index.html'
+        window.location.href='/public/imc.html'
       }
       
     }).catch((error) => {
