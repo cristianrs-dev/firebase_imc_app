@@ -103,7 +103,7 @@ function conectarComEmailSenha(){
 }
 
 function usuarioLogado(){
-    let email = document.getElementById("email").value
+    let usuario = document.getElementById("usuario").value
 
     
     onAuthStateChanged(auth, (user) => {
@@ -111,8 +111,9 @@ function usuarioLogado(){
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
-        const email = user.email;
-        alert(`${email} logado com sucesso`)
+        const userEmail = user.email;
+        usuario.innerHTML = user.email
+        alert(`${userEmail} logado com sucesso`)
         return true
         // ...
       } else {
@@ -126,11 +127,12 @@ function usuarioLogado(){
 
   function userDeslogado(){
 
-    signOut(auth).then(() => {
+    signOut(auth)
+    .then(() => {
       // Sign-out successful.
       if(!usuarioLogado()){
-        console("usuario desconectado")
-        window.location.href='https://cristianrs-dev.github.io/firebase-imc-app/public/imc.html'
+        console.log("usuario desconectado")
+        window.location.href='/public/index.html'
       }
       
     }).catch((error) => {

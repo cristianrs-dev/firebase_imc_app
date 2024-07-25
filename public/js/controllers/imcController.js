@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded",
     function() {
        let peso =  document.getElementById('peso')
        let altura = document.getElementById('altura')
+       let btnCalcular = document.getElementById("botao")
+       btnCalcular.addEventListener('click',calcular)
        if(peso){
         peso.addEventListener('input', formatarMaskPeso);
        }
@@ -12,14 +14,15 @@ document.addEventListener("DOMContentLoaded",
         }
         
     });
+
 function calcular(){
+    
     //declaração de variaveis
     const resultado   =  document.getElementById("resultado")
     const indicador =  document.getElementById("indicador")
     const altura  =  parseFloat(document.getElementById("altura").value)
     const peso    =  parseFloat(document.getElementById("peso").value)
-    console.log(altura)
-   //validarCampo(h,p)
+  
    if(altura.value === ''){
 
         alert("campo altura vazio")
