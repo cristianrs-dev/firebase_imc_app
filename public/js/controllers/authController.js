@@ -1,20 +1,32 @@
 
 import {auth,signInWithEmailAndPassword,signOut,createUserWithEmailAndPassword, onAuthStateChanged} from '../app.js'
 
-const { JSDOM } = require('jsdom');
-const dom = new JSDOM(`<!DOCTYPE html><html><body></body></html>`);
-const document = dom.window.document
 
 
 document.addEventListener("DOMContentLoaded", 
 function() {
-  let btnLogin = document.getElementById("btn-login"); 
-  btnLogin.addEventListener("click", conectarComEmailSenha);
+  let btnLogin = document.getElementById("btn-login");
+  let btnsignOut =  document.getElementById("btn-signOut")
+
+  if(btnLogin){
+    btnLogin.addEventListener("click", conectarComEmailSenha);
+  }else{
+    alert("botao nao encontrado")
+  }
+  
+  if(btnsignOut){
+    btnsignOut.addEventListener("click",userDeslogado)
+  }else{
+    alert("botao nao encontrado")
+  }
+  
 });
 
 
 
-// Criando um contexto jsdom
+
+
+
 
 
 
@@ -51,10 +63,6 @@ function validarEmail(email){
   return regex.test(email)
 }
 
-module.exports={validarEmail,campoVazio}
-
-
-
 function conectarComEmailSenha(){
 
     let email = document.getElementById("email").value
@@ -64,8 +72,9 @@ function conectarComEmailSenha(){
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user
+      usuarioLogado() = userCredential.user
       // ...
-      window.location.href='../imc.html'
+      window.location.href='/public/imc.html'
      // alert(`${user.email} logado com sucesso`)
     })
     .catch((error) => {
@@ -75,17 +84,7 @@ function conectarComEmailSenha(){
   }
 
 
-  function usuarioDesLogado(){
-
-    signOut(auth).then(() => {
-      // Sign-out successful.
-      console("usuario desconectado")
-    }).catch((error) => {
-      // An error happened.
-      console.log(`${error} ao desconectar`)
-    });
-
-  }
+  
 
   function crirUsuarioComSenha(){
     
@@ -118,13 +117,30 @@ function usuarioLogado(){
         // https://firebase.google.com/docs/reference/js/auth.user
         const email = user.email;
         alert(`${email} logado com sucesso`)
+        return true
         // ...
       } else {
         // User is signed out
         // ...
         console.log("usuario não logado")
+        return false
       }
     });
   }
 
+  function userDeslogado(){
+
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      if(!usuarioLogado()){
+        console("usuario desconectado")
+        window.location.href='/public/index.html'
+      }
+      
+    }).catch((error) => {
+      // An error happened.
+      console.log(`${error.message} erro ao desconectar`)
+    });
+
+  }
   

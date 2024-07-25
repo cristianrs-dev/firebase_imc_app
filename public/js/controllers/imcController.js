@@ -1,4 +1,17 @@
 
+document.addEventListener("DOMContentLoaded", 
+    function() {
+       let peso =  document.getElementById('peso')
+       let altura = document.getElementById('altura')
+       if(peso){
+        peso.addEventListener('input', formatarMaskPeso);
+       }
+      
+        if(altura){
+            altura.addEventListener('input', formatarMaskAltura);
+        }
+        
+    });
 function calcular(){
     //declaração de variaveis
     const resultado   =  document.getElementById("resultado")
@@ -93,5 +106,4 @@ function formatarMaskAltura() {
     inputAltura.value = valor.replace(/(\d{1,})(\d{2})$/, '$1.$2'); 
 }
 
-document.getElementById('peso').addEventListener('input', formatarMaskPeso);
-document.getElementById('altura').addEventListener('input', formatarMaskAltura);
+

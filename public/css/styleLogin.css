@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #fff;
     margin: 0;
     padding: 0px;
     display: flex;
@@ -9,8 +9,13 @@ body {
     height: 100vh;
 }
 
+
 .login-container {
     background-color: #fff;
+    display: flex;
+    justify-content:space-around;
+    width: 600px;
+    align-items: center;
     padding:50px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -50,4 +55,21 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.box-imgLogin{
+    width: 300px;
+    height: auto;
+   
+    
+}
+
+.img-login{
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
 }
