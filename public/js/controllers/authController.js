@@ -16,7 +16,7 @@ function() {
     btnsignOut.addEventListener("click",userDeslogado)
   }
   
-});
+})
 
 
 
