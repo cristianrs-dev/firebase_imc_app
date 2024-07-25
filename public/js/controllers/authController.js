@@ -130,7 +130,7 @@ function usuarioLogado(){
       // Sign-out successful.
       if(!usuarioLogado()){
         console("usuario desconectado")
-        window.location.href='/public/imc.html'
+        window.location.href='https://cristianrs-dev.github.io/firebase-imc-app/public/imc.html'
       }
       
     }).catch((error) => {
