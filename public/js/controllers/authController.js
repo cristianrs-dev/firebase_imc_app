@@ -70,7 +70,7 @@ function conectarComEmailSenha(){
       const user = userCredential.user
      
       // ...
-      window.location.href='/imc.html'
+      window.location.href='https://cristianrs-dev.github.io/firebase-imc-app/imc.html'
      // alert(`${user.email} logado com sucesso`)
     })
     .catch((error) => {
