@@ -142,16 +142,6 @@
         width: 90%;
     }
 
-    .sidebar {
-        transform: translateX(-250px);
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 1000;
-        overflow-y: auto;
-        transition: transform 0.3s ease;
-    }
-
     #open-btn {
         display: block;
     }
