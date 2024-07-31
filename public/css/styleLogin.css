@@ -10,21 +10,25 @@ body {
 }
 
 
+
 .login-container {
     background-color: #fff;
     display: flex;
     justify-content:space-around;
-    width: 600px;
+    width: 50%;
     align-items: center;
-    padding:50px;
+    padding: 50px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+p{
+    text-align: center;
+    font-family: sans-serif;
+    color:#9b59b6;
+    font-weight: bolder;
 }
 
-.login-container h2 {
-    text-align: center;
-}
 
 .form-group {
     margin-bottom: 15px;
@@ -42,26 +46,29 @@ body {
     border-radius: 3px;
 }
 
+
 button {
     width: 100%;
     padding: 10px;
+    margin:10px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
+    
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color:#2ecc71;
 }
 
 .box-imgLogin{
     width: 300px;
     height: auto;
-   
-    
+
 }
 
 .img-login{
@@ -72,4 +79,44 @@ button:hover {
     align-items: center;
     text-align: center;
   
+}
+
+/* Para telas menores que 768px (tablets e dispositivos móveis) */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 90%;
+        box-sizing: border-box;
+    }
+    .img-login{
+        max-width: 100px;
+        height: auto;
+        margin: auto;
+    }
+
+    .box-imgLogin img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+/* Para telas menores que 480px (smartphones) */
+@media (max-width: 480px) {
+    .login-container {
+        flex-direction: column;
+        width: 90%;
+        box-sizing: border-box;
+    }
+    .img-login{
+        max-width: 100px;
+        height: auto;
+        margin: auto;
+    }
+
+    .box-imgLogin img {
+        width: 100%;
+        height: auto;
+    }
+
 }
