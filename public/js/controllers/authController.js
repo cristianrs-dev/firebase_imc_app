@@ -19,13 +19,6 @@ function() {
 })
 
 
-
-
-
-
-
-
-
 function campoVazio(id){
   const campo = document.getElementById(id)
   if(campo === null){
@@ -54,10 +47,12 @@ function verificaCamposVazios(event){
   }
 }
 
+
 function validarEmail(email){
   const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
   return regex.test(email)
 }
+
 
 function conectarComEmailSenha(){
 
@@ -68,10 +63,11 @@ function conectarComEmailSenha(){
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user
-     
-      // ...
+      alert(user.email)
+      
+      
       window.location.href='imc.html'
-     // alert(`${user.email} logado com sucesso`)
+     
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -80,65 +76,4 @@ function conectarComEmailSenha(){
   }
 
 
-  
-
-  function crirUsuarioComSenha(){
-    
-    let email = document.getElementById("email").value
-    let senha = document.getElementById("senha").value
-
-  createUserWithEmailAndPassword(auth, email, senha)
-    .then((userCredential) => {
-   
-      const usuario = userCredential.user;
-      alert(usuario)
-      alert("usuario criado com sucesso")
-   
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    
-    });
-}
-
-function usuarioLogado(){
-    let usuario = document.getElementById("usuario").value
-
-    
-    onAuthStateChanged(auth, (user) => {
-      
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/auth.user
-        const userEmail = user.email;
-        usuario.innerHTML = user.email
-        alert(`${userEmail} logado com sucesso`)
-        return true
-        // ...
-      } else {
-        // User is signed out
-        // ...
-        console.log("usuario não logado")
-        return false
-      }
-    });
-  }
-
-  function userDeslogado(){
-
-    signOut(auth)
-    .then(() => {
-      // Sign-out successful.
-      if(!usuarioLogado()){
-        console.log("usuario desconectado")
-        window.location.href='index.html'
-      }
-      
-    }).catch((error) => {
-      // An error happened.
-      console.log(`${error.message} erro ao desconectar`)
-    });
-
-  }
   
