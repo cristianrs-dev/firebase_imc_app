@@ -10,7 +10,13 @@
     <link rel="stylesheet" href="public/css/styleImc.css">
 </head>
 <body>
-  <button id="openBtn" class="fa-solid fa-bars"></button>
+  <header>
+    <div id="openBtn" class="menuMobile">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      </div>
+  </header>
         <div class="sidebar" id="sidebar">
           <ul>
             <li><a id="usuario" href="configuracoes.html">Usuario</a></li>
@@ -20,13 +26,39 @@
           </ul>
           <button id="close-btn">X</button>
         </div>
-        
-       
-          <h1>historico aqui</h1>
 
-      
-      <div id="resultado"></div>
-     <div id="indicador"></div>
+
+        <div class="m-auto card col-6 d-flex justify-content-center align-items-center mt-5 ">
+
+          <table class="table col-6 m-auto">
+            <thead>
+              <tr>
+                <th scope="col">PESO</th>
+                <th scope="col">ALTURA</th>
+                <th scope="col">IMC</th>
+                <th scope="col">DATA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+             
+            </tbody>
+          </table>
+         
+
+        </div>
+        
 
     <script type="module" src="public/js/controllers/imcController.js"></script>
     <script type="module" src="public/js/controllers/authController.js" ></script>

@@ -2,9 +2,6 @@
 import {auth,signInWithEmailAndPassword,signOut,createUserWithEmailAndPassword, onAuthStateChanged} from '../app.js'
 import {User} from "../models/UserModel.js"
 
-User.email = "fulano@gmail.com"
-
-console.log(User.email)
 
 
 document.addEventListener("DOMContentLoaded", 
@@ -60,18 +57,18 @@ function validarEmail(email){
 
 function conectarComEmailSenha(){
 
-    let email = document.getElementById("email").value
-    let senha = document.getElementById("senha").value
-    let usuario = document.getElementById("usuario")
+  User.email= document.getElementById("email").value
+  User.senha = document.getElementById("senha").value
+  
 
-    signInWithEmailAndPassword(auth, email, senha)
+    signInWithEmailAndPassword(auth, User.email, User.senha)
     .then((userCredential) => {
       const user = auth.currentUser;
 
       if (user != null) {
         window.location.href='imc.html'
         alert(`${user.email} logado`)
-        usuario.innerHTML=`${user.email}`
+       
       } else {
         alert("usuario e senha invalidos")
       }

@@ -60,6 +60,22 @@
     font-size: larger;
 }
 
+.menuMobile{
+    z-index: 1000;
+    position:fixed;
+    top: 10px;
+    right: 50px;
+    cursor: pointer;
+}
+.line{
+    border-radius: 3px;
+    width: 50px;
+    height: 7px;
+    margin: 3px;
+    background-color: black;
+}
+
+
 .sidebar {
     height: 100%;
     width: 250px;

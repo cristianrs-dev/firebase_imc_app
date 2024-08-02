@@ -10,7 +10,13 @@
     <link rel="stylesheet" href="public/css/styleImc.css">
 </head>
 <body>
-  <button id="openBtn" class="fa-solid fa-bars"></button>
+  <header>
+    <div id="openBtn" class="menuMobile">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      </div>
+  </header>
         <div class="sidebar" id="sidebar">
           <ul>
             <li><a id="usuario" href="configuracoes.html">Usuario</a></li>
@@ -21,11 +27,44 @@
           <button id="close-btn">X</button>
         </div>
         
-       <div>
-       <h1>configurações gerais de usuario aqui</h1> 
-        <p>pagina em desenvolvimento</p>
+        <form id="sombra" class=" formulario container card d-flex justify-content-center mt-5 mb-5 p-3 col-lg-4 col-md-4 col-sm-4">
 
-       </div>
+          
+  
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nome:</label>
+            <input id="nome" type="text" class="form-control" required>
+          </div>
+  
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">E-mail:</label>
+            <input id="email" type="text" class="form-control" required >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Senha</label>
+            <input id="Senha" type="text" class="form-control" required >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Data nascimnento</label>
+            <input id="dataNascimento" type="text" class="form-control" required >
+          </div>
+
+
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Peso (kg):</label>
+            <input id="peso" type="text" class="form-control" required >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Altura (m):</label>
+            <input id="altura" type="text" class="form-control" required >
+          </div>
+          
+          <input type="submit" class="btn btn-primary" onclick="calcular()" value="Cadastrar" id="botao">
+        </form>
 
     
 
