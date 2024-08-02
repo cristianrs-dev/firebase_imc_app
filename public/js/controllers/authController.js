@@ -86,6 +86,7 @@ function conectarComEmailSenha(){
   function desconectarUser(){
     signOut(auth).then(() => {
       alert("usuario desconectado")
+       window.location.href='index.html'
     }).catch((error) => {
       alert(error.message)
     });
