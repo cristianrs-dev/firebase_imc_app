@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
-    const openBtn = document.getElementById('open-btn');
+    const openBtn = document.getElementById('openBtn');
     const closeBtn = document.getElementById('close-btn');
     const content = document.querySelector('.content');
 

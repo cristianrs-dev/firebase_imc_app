@@ -1,6 +1,10 @@
 
 import {auth,signInWithEmailAndPassword,signOut,createUserWithEmailAndPassword, onAuthStateChanged} from '../app.js'
+import {User} from "../models/UserModel.js"
 
+User.email = "fulano@gmail.com"
+
+console.log(User.email)
 
 
 document.addEventListener("DOMContentLoaded", 
@@ -11,11 +15,11 @@ function() {
   if(btnLogin){
     btnLogin.addEventListener("click", conectarComEmailSenha);
   }
-  
+
   if(btnsignOut){
-    btnsignOut.addEventListener("click",userDeslogado)
+    btnsignOut.addEventListener("click", desconectarUser);
   }
-  
+    
 })
 
 
@@ -58,16 +62,20 @@ function conectarComEmailSenha(){
 
     let email = document.getElementById("email").value
     let senha = document.getElementById("senha").value
+    let usuario = document.getElementById("usuario")
 
     signInWithEmailAndPassword(auth, email, senha)
     .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user
-      alert(user.email)
-      
-      
-      window.location.href='imc.html'
-     
+      const user = auth.currentUser;
+
+      if (user != null) {
+        window.location.href='imc.html'
+        alert(`${user.email} logado`)
+        usuario.innerHTML=`${user.email}`
+      } else {
+        alert("usuario e senha invalidos")
+      }
+
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -75,5 +83,11 @@ function conectarComEmailSenha(){
     });
   }
 
+  function desconectarUser(){
+    signOut(auth).then(() => {
+      alert("usuario desconectado")
+    }).catch((error) => {
+      alert(error.message)
+    });
+  }
 
-  
