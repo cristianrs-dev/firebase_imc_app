@@ -1,6 +1,6 @@
 
 import {auth,signInWithEmailAndPassword,signOut,createUserWithEmailAndPassword, onAuthStateChanged} from '../app.js'
-import {User} from "../models/UserModel.js"
+import {User} from "../models/userModel.js"
 
 
 
