@@ -66,7 +66,7 @@ function conectarComEmailSenha(){
       const user = auth.currentUser;
 
       if (user != null) {
-        window.location.href='imc.html'
+        window.location.href='index.html'
         alert(`${user.email} logado`)
        
       } else {
@@ -83,7 +83,7 @@ function conectarComEmailSenha(){
   function desconectarUser(){
     signOut(auth).then(() => {
       alert("usuario desconectado")
-       window.location.href='index.html'
+       window.location.href='login.html'
     }).catch((error) => {
       alert(error.message)
     });

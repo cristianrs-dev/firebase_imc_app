@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^10.11.1"
+    "firebase": "^10.12.5"
   },
   "devDependencies": {
     "jest": "^29.7.0",
