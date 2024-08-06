@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
 
 
 
@@ -18,7 +18,7 @@ const firebaseConfig = {
   const db = getFirestore(app);
 
 
-  async function lerDocs() {
+  async function getData() {
     try {
       // Obtem a referência para a coleção "people"
       const peopleCollection = collection(db, "people");
@@ -36,4 +36,19 @@ const firebaseConfig = {
   }
   
   // Chama a função para ler documentos
-  lerDocs();
+  getData();
+
+   async function addData(){
+    try {
+      const docRef = await addDoc(collection(db, "users"), {
+        first: "Ada",
+        last: "Lovelace",
+        born: 1815
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+
+  }
+  

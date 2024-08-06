@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded",
     function() {
        let peso =  document.getElementById('peso')
        let altura = document.getElementById('altura')
-       let btnCalcular = document.getElementById("botao")
-       btnCalcular.addEventListener('click',calcular)
+       let btnCalcular = document.getElementById("btnCalcular")
+       
        
        if(peso){
         peso.addEventListener('input', formatarMaskPeso);
@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded",
       
         if(altura){
             altura.addEventListener('input', formatarMaskAltura);
+        }
+
+        if(btnCalcular){
+            btnCalcular.addEventListener('click',calcular)
         }
         
     });

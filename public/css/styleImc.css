@@ -96,8 +96,17 @@
 }
 
 .sidebar.show {
-    left: 0; /* Mostra o painel quando a classe 'show' é adicionada */
+    left: 0;
 }
+
+/*
+.content.open {
+    margin-left:5px;
+    transition: margin-left 0.3s ease;
+}
+
+
+*/
 
 .sidebar h2 {
     text-align: center;
